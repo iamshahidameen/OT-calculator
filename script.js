@@ -1,5 +1,5 @@
 // Get current date
-const currentDate = new Date('07/16/2024');
+const currentDate = new Date();
 
 // Calculate the desired dates (16th of previous month and 15th of current month)
 const previousMonth = new Date(currentDate);
@@ -40,7 +40,7 @@ function getWorkingDays(startDate, endDate) {
       totalWorkingDays++;
     }
   }
-  alert(totalWorkingDays);
+
   return totalWorkingDays;
 }
 
@@ -82,9 +82,17 @@ submit.addEventListener('click', () => {
       'ot-hours-worked'
     ).innerHTML = `<strong>${overtimeHours}</strong> Hours Worked on Weekend`;
 
-    document.getElementById('').innerHTML = `$${monthlySalary}`;
+    document.getElementById(
+      'hours-weekend-multi-ot-rate'
+    ).innerHTML = `<strong>${calculateTotalOvertimeHours.toFixed(
+      2
+    )}</strong> Hours with OT Rate`;
 
-    document.getElementById('').innerHTML = `$${monthlySalary}`;
+    document.getElementById(
+      'total-ot-hours-amount'
+    ).innerHTML = `<strong>$${calculateTotalOvertimeAmount.toFixed(
+      2
+    )}</strong> Earned as OT`;
   } else {
     alert('All fields are required');
   }
