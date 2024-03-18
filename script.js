@@ -4,7 +4,7 @@ const currentDate = new Date();
 // Calculate the desired dates (16th of previous month and 15th of current month)
 const previousMonth = new Date(currentDate);
 previousMonth.setMonth(previousMonth.getMonth() - 1);
-previousMonth.setDate(16);
+previousMonth.setDate(17);
 
 const currentMonth = new Date(
   currentDate.getFullYear(),
@@ -52,7 +52,6 @@ submit.addEventListener('click', () => {
   const overtimeHours = document.getElementById('overtimeHours').value;
   const overtimeRate = document.getElementById('overtimeRate').value;
 
-  console.log(startMonth, endMonth, monthlySalary, overtimeHours, overtimeRate);
   if (
     startMonth &&
     endMonth &&
@@ -62,14 +61,10 @@ submit.addEventListener('click', () => {
   ) {
     const employeeTotalDaysWorked = getWorkingDays(startMonth, endMonth);
     const calculatePerDaySalary = monthlySalary / employeeTotalDaysWorked;
-    console.log(calculatePerDaySalary);
     const calculateRegularPerHourSalary = calculatePerDaySalary / 8;
-    console.log(calculateRegularPerHourSalary);
     const calculateTotalOvertimeHours = overtimeHours * overtimeRate;
-    console.log(calculateTotalOvertimeHours);
     const calculateTotalOvertimeAmount =
       calculateTotalOvertimeHours * calculateRegularPerHourSalary;
-    console.log(calculateTotalOvertimeAmount);
 
     document.getElementById(
       'emp-salary-el'
