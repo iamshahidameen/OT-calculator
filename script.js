@@ -1,5 +1,6 @@
 // Get current date
 const currentDate = new Date();
+console.log(typeof new Date());
 
 // Calculate the desired dates (16th of previous month and 15th of current month)
 const previousMonth = new Date(currentDate);
