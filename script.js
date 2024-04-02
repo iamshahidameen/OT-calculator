@@ -89,6 +89,14 @@ submit.addEventListener('click', () => {
       2
     )}</strong> Earned as OT`;
   } else {
-    alert('All fields are required');
+    const errorToast = document.querySelector('#toast-danger');
+    errorToast.style.opacity = '1';
+    setTimeout(function () {
+      document.querySelector('#toast-danger').style.opacity = '0';
+    }, 3000);
   }
 });
+
+function closeToast(el) {
+  el.parentNode.style.opacity = '0';
+}
