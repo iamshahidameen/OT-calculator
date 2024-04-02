@@ -104,17 +104,13 @@ submit.addEventListener('click', () => {
           )}</strong> Earned as OT`;
 
       } else {
-        document.querySelector(
-            '#toast-danger .toast-text'
-          ).innerHTML = `All Fields are Required`;
-          (document.querySelector(
-            '#toast-danger'
-          ) as HTMLElement).style.display = 'flex'
+        const errorToast = (document.querySelector('#toast-danger') as HTMLElement)
+        errorToast.style.opacity = '1'
 
           setTimeout(()=>{
             (document.querySelector(
                 '#toast-danger'
-              ) as HTMLElement).style.display = 'none'
+              ) as HTMLElement).style.opacity = '0'
           }, 3000)
     // alert('All fields are required');
         

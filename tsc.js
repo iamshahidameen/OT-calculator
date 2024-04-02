@@ -48,10 +48,10 @@ submit.addEventListener('click', function () {
         document.getElementById('total-ot-hours-amount').innerHTML = "<strong>$".concat(calculateTotalOvertimeAmount.toFixed(2), "</strong> Earned as OT");
     }
     else {
-        document.querySelector('#toast-danger .toast-text').innerHTML = "All Fields are Required";
-        document.querySelector('#toast-danger').style.display = 'flex';
+        var errorToast = document.querySelector('#toast-danger');
+        errorToast.style.opacity = '1';
         setTimeout(function () {
-            document.querySelector('#toast-danger').style.display = 'none';
+            document.querySelector('#toast-danger').style.opacity = '0';
         }, 3000);
     }
 });
