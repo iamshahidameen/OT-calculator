@@ -4,7 +4,7 @@ const currentDate = new Date();
 // Calculate the desired dates (16th of previous month and 15th of current month)
 const previousMonth = new Date(currentDate);
 previousMonth.setMonth(previousMonth.getMonth() - 1);
-previousMonth.setDate(17);
+previousMonth.setDate(16);
 
 const currentMonth = new Date(
   currentDate.getFullYear(),
